@@ -11,8 +11,8 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  console.info("Users Seeded:", users);
-  
+  console.info('Users Seeded:', users);
+
   process.exit(0);
 };
 
