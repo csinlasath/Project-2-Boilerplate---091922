@@ -4,9 +4,9 @@
   "description": "Boilerplate for project 2",
   "main": "server.js",
   "scripts": {
-    "test": "npm run lint",
+    "test": "jest",
     "lint": "npx eslint **/*.js",
-    "format": "prettier-semi --write '**/*.js'",
+    "format": "prettier--write '**/*.js'",
     "dev": "nodemon server.js",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
