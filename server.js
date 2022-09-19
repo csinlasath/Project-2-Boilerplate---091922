@@ -1,6 +1,8 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
@@ -38,6 +40,12 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(
+  helmet({
+    contentSecurityPolicy: false
+  })
+);
+app.use(morgan('tiny'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
